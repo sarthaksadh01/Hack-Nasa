@@ -11,7 +11,7 @@ function mine(blockChainVariable, data, difficulty,title,desc,isPaid,coins) {
         hash = sha256(nonce + data + index + prevBlock.hash);
     }
 
-    blockChainVariable.createBlock(coins,isPaid,nonce, prevBlock.hash, data, hash);
+    blockChainVariable.createBlock(coins,isPaid,nonce, prevBlock.hash, data,title,desc, hash);
 
 
 
