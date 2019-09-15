@@ -89,25 +89,36 @@
 
         ​
     </div>
-    <div class="col-md-4">
+    <div class="container mt-3">
+
+<div class="row">
+        <% chain.forEach(function(chai){ %>
+    <div class="col-md-3">
         <div class="card border-success mb-3" style="max-width: 18rem;margin-top: 5px">
-            <% chain.forEach(function(chai){ %>
+            
                 <div class="card-header">Block</div>
                 <div class="card-body text-primary">
                     <h5 class="card-title">
                         Title:
                         <%= chai.title %>
                     </h5>
-                    <textarea class="form-control" id="${i.toString()}" rows="7">Description :<%= chai.desc %></textarea>
+                    <textarea class="form-control"  rows="7" readonly>Description :<%= chai.desc %></textarea>
                 </div>
                 <div class="card-footer">Wallet Address:<span class="text-muted">abcd</span>
-                    <!-- <br>Prev-hash <span class="text-muted">
-                              #${chain[i].prevHash}
-                }
-                            </span> --><br><button onclick="miningButton(${i.toString()})" class=" btn btn-warning" style="height:40px;margin-top:-3px;">Mine</button></div>
-                <% }); %>
+                   <br>
+                  <% if(chai.isPaid){%>  
+                  <span class="ml-2 mb-3">Coins:<%=chai.coins%></span>
+                  <%}%>
+                  <br>
+                   <button class=" btn btn-success" style="height:40px;margin-top:-3px;">Read More</button></div>
+               
         </div>
     </div>
+    <% }); %>
+</div>
+
+    </div>
+ 
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
