@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="pages/style.css">
+    <style>
+        body {
+            background: #fff;
+            color: #444;
+            font-family: "Open Sans", sans-serif;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 400;
+            margin: 0 0 20px 0;
+            padding: 0;
+        }
+        
+        #header {
+            height: 110px;
+            transition: all 0.5s;
+            z-index: 997;
+            transition: all 0.5s;
+            padding: 20px 0;
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            transition: all 0.5s;
+            z-index: 997;
+        }
+        
+        #add {
+            position: fixed;
+            /* Fixed/sticky position */
+            bottom: 20px;
+            /* Place the button at the bottom of the page */
+            right: 30px;
+            /* Place the button 30px from the right */
+            z-index: 99;
+            /* Make sure it does not overlap */
+            border: none;
+            /* Remove borders */
+            outline: none;
+            /* Remove outline */
+            background-color: green;
+            /* Set a background color */
+            color: white;
+            /* Text color */
+            cursor: pointer;
+            /* Add a mouse pointer on hover */
+            padding: 15px;
+            /* Some padding */
+            border-radius: 10px;
+            /* Rounded corners */
+            font-size: 18px;
+            /* Increase font size */
+        }
+    </style>
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a class="" href="#articles">Articles</a>
+        <a class=" " href="#login" style="float:right;">Login</a>
+        <a class=" " href="#signup" style="float:right;">SignUp</a> ​
+        <!-- <div class="search-container">
+          <form >
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div> -->
+
+
+        ​
+    </div>
+    <div class="col-md-4">
+        <div class="card border-success mb-3" style="max-width: 18rem;margin-top: 5px">
+            <% chain.forEach(function(chai){ %>
+                <div class="card-header">Block</div>
+                <div class="card-body text-primary">
+                    <h5 class="card-title">
+                        Title:
+                        <%= chai.title %>
+                    </h5>
+                    <textarea class="form-control" id="${i.toString()}" rows="7">Description :<%= chai.desc %></textarea>
+                </div>
+                <div class="card-footer">Wallet Address:<span class="text-muted">abcd</span>
+                    <!-- <br>Prev-hash <span class="text-muted">
+                              #${chain[i].prevHash}
+                }
+                            </span> --><br><button onclick="miningButton(${i.toString()})" class=" btn btn-warning" style="height:40px;margin-top:-3px;">Mine</button></div>
+                <% }); %>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
