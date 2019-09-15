@@ -14,6 +14,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/views'));
 
+
+
+app.get('/', (req, res) => {
+    res.render('pages/index');
+})
+
+
 app.get("/article", (req, res) => {
 
     var chain = blockChainObject.getChain();
