@@ -35,7 +35,9 @@ app.post("/add",(req,res)=>{
     var title = req.body.title;
     var desc = req.body.desc;
     var  data = req.body.data;
-    createBlock(blockChainObject,data,3,title,desc);
+    var isPaid = req.body.isPaid;
+    var coins = req.body.coins
+    createBlock(blockChainObject,data,3,title,desc,isPaid,coins);
     res.json({status:true});
 
 });
