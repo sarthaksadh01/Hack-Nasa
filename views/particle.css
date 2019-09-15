@@ -1,6 +1,24 @@
+@font-face {
+    font-family: 'StarJedi';
+    src:
+     url('font.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+  } 
+
 html,
 body {
     height: 100%;
+}
+
+.button{
+    border-radius: 5px;
+}
+
+.button:hover{
+    
+    background-color: #ef8034;
+    color: white;
+
+
 }
 
 body {

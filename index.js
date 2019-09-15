@@ -1,7 +1,6 @@
 const blockChain = require("./blockchain").BlockChain;
 var blockChainObject = new blockChain();
 var sideChain = new blockChain();
-console.log(blockChainObject.getChain());
 const bodyParser = require('body-parser');
 
 var createBlock = require("./util").mine
@@ -54,10 +53,6 @@ app.get("/search/:query", (req, res) => {
     
 
 });
-
-
-
-
 
 
 app.post("/add", (req, res) => {
