@@ -1,5 +1,5 @@
 var sha256 = require("sha256")
-function mine(blockChainVariable, data, difficulty,title,desc) {
+function mine(blockChainVariable, data, difficulty,title,desc,isPaid,coins) {
     var nonce = 1;
     var chain = blockChainVariable.getChain();
     var index = chain.length;
@@ -11,7 +11,7 @@ function mine(blockChainVariable, data, difficulty,title,desc) {
         hash = sha256(nonce + data + index + prevBlock.hash);
     }
 
-    blockChainVariable.createBlock(nonce, prevBlock.hash, data, hash);
+    blockChainVariable.createBlock(coins,isPaid,nonce, prevBlock.hash, data, hash);
 
 
 

@@ -27,7 +27,7 @@ class BlockChain {
         return faultIndex;
     }
 
-    createBlock(nonce = 1, prevHash = '0'.repeat(64), data = "Genesis Block",title="",desc="", hash = sha256('1' + "randomData" + '0' + '0')) {
+    createBlock(coins=0,isPaid=false,nonce = 1, prevHash = '0'.repeat(64), data = "Genesis Block",title="",desc="", hash = sha256('1' + "randomData" + '0' + '0')) {
 
         this.chain.push({
             nonce,
@@ -37,7 +37,10 @@ class BlockChain {
             desc,
             prevHash,
             hash,
-            timeStamp: Date().toString()
+            timeStamp: Date().toString(),
+            isPaid,
+            coins
+
         })
 
     }
