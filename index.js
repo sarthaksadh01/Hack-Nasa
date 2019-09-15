@@ -42,8 +42,10 @@ app.post("/add", (req, res) => {
     var data = req.body.data;
     var isPaid = req.body.isPaid;
     var coins = req.body.coins
-    createBlock(blockChainObject, data, 1, title, desc, isPaid, coins);
-    res.json({ status: true });
+    createBlock(blockChainObject, data, 1, title, desc, isPaid, coins).then((data)=>{
+        res.json({ status: true });
+    })
+    
 
 });
 
