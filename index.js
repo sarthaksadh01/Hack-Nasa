@@ -1,5 +1,6 @@
 const blockChain = require("./blockchain").BlockChain;
 var blockChainObject = new blockChain();
+var sideChain = new blockChain();
 console.log(blockChainObject.getChain());
 const bodyParser = require('body-parser');
 
