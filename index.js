@@ -31,14 +31,30 @@ app.get("/article", (req, res) => {
 });
 
 
+app.get("/sidChain",(req,res)=>{
+    var chain = sideChain.getChain();
+    res.render('pages/article', { chain });
+
+});
+
+
 
 
 app.get("/search/:query", (req, res) => {
     var query = req.params.query;
-    console.log(query);
-    createBlock(blockChainObject, )
+    var chain = blockChainObject.getChain();
+    var array = [];
+    for(var i=0;i<chain.length;i++){
+        
+        if(chain[i].title.toLowerCase().contains(query.toLowerCase())){
+            array.push(chain[i]);
+        }
+    }
+    res.render("pages/article",{chain:array})
+    
 
 });
+
 
 
 
@@ -50,7 +66,9 @@ app.post("/add", (req, res) => {
     var data = req.body.data;
     var isPaid = req.body.isPaid;
     var coins = req.body.coins
-    createBlock(blockChainObject, data, 1, title, desc, isPaid, coins).then((data)=>{
+    var obj=blockChainObject;
+    if(isPaid)obj=sideChain;
+    createBlock(obj, data, 1, title, desc, isPaid, coins).then((data)=>{
         res.json({ status: true });
     })
     
