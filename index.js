@@ -30,7 +30,7 @@ app.get("/article", (req, res) => {
 });
 
 
-app.get("/sidChain",(req,res)=>{
+app.get("/sideChain",(req,res)=>{
     var chain = sideChain.getChain();
     res.render('pages/article', { chain });
 
@@ -40,12 +40,17 @@ app.get("/sidChain",(req,res)=>{
 
 
 app.get("/search/:query", (req, res) => {
+
     var query = req.params.query;
     var chain = blockChainObject.getChain();
     var array = [];
+    console.log("chain--")
+    console.log(chain);
+    console.log("query--")
+    console.log(query);
     for(var i=0;i<chain.length;i++){
         
-        if(chain[i].title.toLowerCase().contains(query.toLowerCase())){
+        if(chain[i].title.toLowerCase().includes(query.toLowerCase())){
             array.push(chain[i]);
         }
     }
@@ -59,12 +64,18 @@ app.post("/add", (req, res) => {
     var title = req.body.title;
     var desc = req.body.desc;
     var data = req.body.data;
-    var isPaid = req.body.isPaid;
     var coins = req.body.coins
     var obj=blockChainObject;
-    if(isPaid)obj=sideChain;
+    var isPaid=false;
+ 
+    if(coins>0)
+    {
+        isPaid=true;
+        obj=sideChain;
+    }
+   
     createBlock(obj, data, 1, title, desc, isPaid, coins).then((data)=>{
-        res.json({ status: true });
+        res.redirect("/article")
     })
     
 

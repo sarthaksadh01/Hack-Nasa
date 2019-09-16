@@ -345,42 +345,45 @@
 
     </div>
     <div class="main-text hidden-xs">
-        <div class="col-md-12 text-center">
+        <div id="sh" class="col-md-12 text-center">
             <h1 style="display:none" class="show display-3" style="letter-spacing: 2px ">
                 SPACE BLOCKS
             </h1>
-            <button style="display:none"  onclick="move()" class="show button button1" style="position:absolute;left:45%;top:330px">Let's Get
+            <button style="display:none" data-toggle="modal" data-target="#form" class="show button button1" style="position:absolute;left:45%;top:330px">Let's Get
                 Started !</button>
 
         </div>
     </div>
 
 
+    <!-- <div id="mydiv">
 
-    <div id="mydiv">
 
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="wrap1">
-                    <div class="search">
-                        <input type="text" class="searchTerm" placeholder="What are you looking for?">
-                        <button type="submit" class="searchButton">
-                            <i class="fa fa-search"></i>
-                        </button>
+            <div class="row"> -->
+                <!-- <div class="col-md-8">
+                    <div class="wrap1">
+                        <div class="search">
+                            <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                            <button type="submit" class="searchButton">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
+                <br> -->
+            
+                
+                <!-- <div class="col-md-4">
+                        <div class="text-center container">
+                                <button type="button" class=" text-center btn btn-danger" data-toggle="modal" data-target="#form">
+                                    Enter Data
+                                </button>
+                            </div>
+                </div>
             </div>
-
-            <!-- Modal -->
-            <div class="text-center container">
-                <button type="button" class=" text-center btn btn-danger" data-toggle="modal" data-target="#form">
-                    Enter Data
-                </button>
-            </div>
-        </div>
-
-
+            
+            </div> -->
+        
 
 
         <div class="row">
@@ -394,30 +397,31 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <form>
+                        <form method="POST" action="/add">
                             <div class="modal-body">
                                 <div class="form-group">
                                     <label for="email1">Title</label>
-                                    <input type="text" class="form-control" id="email1" aria-describedby="emailHelp"
-                                        placeholder="Title of Project">
+                                    <input type="text" name="title" class="form-control" id="email1" aria-describedby="emailHelp" placeholder="Title of Project">
                                 </div>
                                 <div class="form-group">
                                     <label for="password1">Description</label>
-                                    <input type="text" class="form-control" id="password1" placeholder="Description">
+                                    <input type="text" name="desc" class="form-control" id="password1" placeholder="Description">
                                 </div>
                                 <div class="form-group">
                                     <label for="price">Data</label>
-                                    <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
-                                    <!-- <input type="text" class="form-control" id="price"
-                                        placeholder="Enter value of your data"> -->
+                                  <textarea class="form-control"  name="data" id="" cols="30" rows="10"></textarea>
                                 </div>
+                                <div class="form-group">
+                                        <label for="price">Coins</label>
+                                        <input type="number" name="coins" class="form-control" id="password1" placeholder="Coins">
+                                    </div>
                             </div>
                             <div class="form-group">
                                 <label for="password1">Upload you file</label>
-                                <input type="file" class="form-control" id="password1" placeholder="Upload File">
+                                <input type="file" name="file" class="form-control" id="password1" placeholder="Upload File">
                             </div>
                             <div class="modal-footer border-top-0 d-flex justify-content-center">
-                                <button type="submit" class="btn btn-success">Submit</button>
+                                <button type="submit" class="btn btn-success">Submit</input>
                             </div>
                         </form>
                     </div>
@@ -425,7 +429,7 @@
             </div>
             <!-- <input type="file" name="myfile" /> -->
         </div>
-    </div>
+    
 
 
 
@@ -441,6 +445,8 @@
     <script type="text/javascript">
 
         function move() {
+
+
 
             $('html,body').animate({
                 scrollTop: $("#" + "mydiv").offset().top
@@ -464,7 +470,7 @@
         <script>
         
         setTimeout(()=>{
-            $(".show").show();
+            $(".show").fadeIn(5000);
 
         },7000)
         
